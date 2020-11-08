@@ -1,0 +1,115 @@
+.sectionDetail {
+    width: 1200px;
+    margin: 20px auto;
+    display: flex;
+}
+
+.iconArrow {
+    display: block;
+    margin: auto;
+}
+
+.boxSmallPreview {
+    width: 15%;
+}
+
+.boxSmallPreview li {
+    margin: 10px;
+    line-height: 0;
+}
+
+.boxSmallPreview li img {
+    display: block;
+    margin: auto;
+}
+
+.boxPreview {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    margin-top: 56px;
+}
+
+.boxPreview img {
+    height: auto;
+    max-width: 100%;
+}
+
+.boxPreview div {
+    padding: 0 0 0 100px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    background: #f1f1f1;
+}
+
+.boxPreview div:last-child {
+    line-height: 33px;
+}
+.boxPreview div span {
+    color: rgb(255, 186, 0);
+    cursor: pointer;
+}
+.boxPreview div label {
+    background: #ddd;
+    width: 50px;
+    text-align: center;
+}
+
+.boxInfoAndOrder {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    margin: 56px 20px 0;
+}
+
+.boxInfoAndOrder span {
+    display: flex;
+}
+.boxInfoAndOrder strong {
+    font-size: 20px;
+    color: #bf081f;
+}
+
+.boxInfoAndOrder span label {
+    background: #f28902;
+    margin: 0 0 0 15px;
+    position: relative;
+    font-size: 11px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 0 5px;
+}
+
+.boxInfoAndOrder div {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.boxInfoAndOrder div ul {
+    padding-top: 10px;
+    display: block;
+}
+
+.boxInfoAndOrder div ul li {
+    border-top: 1px solid #eee;
+    display: table;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.boxInfoAndOrder div ul li span:first-child {
+    padding: 5px 15px;
+    display: table-cell;
+    width: 40%;
+}
+
+.boxInfoAndOrder div ul li span:last-child {
+    display: table-cell;
+    padding: 5px 0;
+    width: auto;
+}

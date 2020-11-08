@@ -1,0 +1,12 @@
+.sectionBreadcumb {
+    margin: 15px auto 0;
+    width: 1200px;
+}
+
+.sectionBreadcumb ul {
+    display: flex;
+}
+
+.sectionBreadcumb ul li * {
+    padding-right: 10px;
+}

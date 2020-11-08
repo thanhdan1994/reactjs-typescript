@@ -13,4 +13,14 @@ export type Product= {
   id: number
   name: string
   thumbnail: string
+  price: number
+  data: {
+    screen: string
+    cpu: string
+    ram: string
+    rom: string
+    camerus: string
+    pin: string
+  }
+  content?: string
 }

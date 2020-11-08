@@ -7,92 +7,35 @@
 .main {
     width: 70%;
 }
+    
+
+.buttonLoadmore {
+    display: block;
+    margin: 50px auto 0;
+    padding: 20px;
+    background-color: rgb(255, 186, 0);
+    border: 0;
+    border-radius: 10px;
+}
+
+.buttonLoadmore::after {
+    content: '';
+    width: 0;
+    right: 0;
+    border-top: 6px solid #288ad6;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    display: inline-block;
+    vertical-align: middle;
+    margin: -2px 0 0 5px;
+}
 
 .productsList {
     display: flex;
     flex-wrap: wrap;
 }
 
-.productsList li {
-    width: 32%;
-    border: 1px solid #eee;
-    margin-right: -1px;
-    margin-bottom: -1px;
-}
-
-.productsList li a {
-    padding: 10px 0;
-    display: block;
-}
-
-.productsList li a img {
-    height: 200px;
-    width: auto;
-    display: block;
-    margin: 15px auto;
-}
-
-.productsList li a h3 {
-    line-height: 1.3em;
-    font-size: 14px;
-    margin: 0 10px;
-    color: #333;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-.price{
-    color: #ff0000;
-    padding: 10px;
-    display: block;
-}
-
-
-.labelAboveImage {
-    overflow: hidden;
-    height: 23px;
-}
-
-.labelAboveImage label {
-    background: #fbda00;
-    font-size: 11px;
-    color: #333;
-    padding: 5px 10px;
-    margin-left: 10px;
-}
-
-.productsList figure {
-    border-top: 1px dashed #ccc;
-    padding-top: 10px;
-    margin: 5px 10px 0 10px;
-}
-
-.productsList figure span {
-    display: block;
-    font-size: 12px;
-    line-height: 20px;
-}
-
 .ads {
     width: 30%;
-}
-
-.ads li {
-    display: flex;
-    padding: 10px;
-    align-items: center;
-}
-
-.ads li figure {
-    display: block;
-    margin: 0;
-}
-
-.ads li figure span {
-    display: block;
-    font-size: 12px;
-    line-height: 20px;
+    margin-left: 20px;
 }

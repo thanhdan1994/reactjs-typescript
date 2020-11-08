@@ -1,16 +1,19 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 
 import { Product } from '../../interfaces'
-import { sampleProductData } from '../../utils/sample-data'
+import { sampleProductData, sampleSidebarProductData } from '../../utils/sample-data'
 import Layout from '../../components/Layout'
 import Detail from '../../components/products/Detail'
+import Breadcrumb from '../../components/Breadcrumb'
+import DescriptionProduct from '../../components/products/DescriptionProduct'
 
 type Props = {
   item?: Product
   errors?: string
+  sidebarItems: Product[]
 }
 
-const StaticPropsDetail = ({ item, errors }: Props) => {
+const StaticPropsDetail = ({ item, errors, sidebarItems }: Props) => {
   if (errors) {
     return (
       <Layout title="Error | Next.js + TypeScript Example">
@@ -27,7 +30,9 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
         item ? item.name : 'Product Detail'
       } | Next.js + TypeScript Example`}
     >
+      <Breadcrumb />
       {item && <Detail item={item} />}
+      <DescriptionProduct product={item} sidebarItems={sidebarItems} />
     </Layout>
   )
 }
@@ -36,7 +41,8 @@ export default StaticPropsDetail
 
 export const getStaticPaths: GetStaticPaths = async () => {
   // Get the paths we want to pre-render based on users
-  const paths = sampleProductData.map((product) => ({
+  const data = [...sampleProductData, ...sampleSidebarProductData];
+  const paths = data.map((product) => ({
     params: { id: product.id.toString() },
   }))
 
@@ -51,10 +57,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const id = params?.id
-    const item = sampleProductData.find((data) => data.id === Number(id))
+    const data = [...sampleProductData, ...sampleSidebarProductData];
+    const item = data.find((data) => data.id === Number(id))
+    const sidebarItems: Product[] = sampleSidebarProductData;
     // By returning { props: item }, the StaticPropsDetail component
     // will receive `item` as a prop at build time
-    return { props: { item } }
+    return { props: { item,  sidebarItems} }
   } catch (err) {
     return { props: { errors: err.message } }
   }

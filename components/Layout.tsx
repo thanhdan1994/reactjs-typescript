@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Header from './Header'
 import Slider from './Slider'
 import Filter from './Filter'
+import Footer from './Footer'
 
 type Props = {
   children?: ReactNode
@@ -18,14 +19,11 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     </Head>
-    <Header></Header>
-    <Slider></Slider>
-    <Filter></Filter>
+    <Header />
+    <Slider />
+    <Filter />
     {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
+    <Footer />
   </>
 )
 

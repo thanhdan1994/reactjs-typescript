@@ -1,0 +1,93 @@
+.sectionDescriptionProduct {
+    width: 1200px;
+    display: flex;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.boxDescriptionProduct {
+    width: 890px;
+}
+
+.boxDescriptionProduct article {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    margin-top: 15px;
+    max-width: 750px;
+    overflow: hidden;
+}
+
+.boxDescriptionProduct article p {
+    display: block;
+    margin: 10px 0;
+}
+
+.boxDescriptionProduct article h3{
+    display: block;
+    line-height: 1.3em;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+.keuGoiMuaHang {
+    display: flex;
+    margin: 20px 0;
+}
+
+.keuGoiMuaHang .info {
+    display: flex;
+    width: 40%;
+}
+
+.boxButton {
+    display: flex;
+    margin-left: 15px;
+}
+
+.boxButton a {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.muaNgay {
+    display: block;
+    overflow: hidden;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 10px 20px;
+    line-height: 20px;
+    height: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    background: #fd6e1d;
+    background: -webkit-gradient(linear,0% 0%,0% 100%,from(#fd6e1d),to(#f59000));
+    background: -webkit-linear-gradient(top,#f59000,#fd6e1d);
+    background: -moz-linear-gradient(top,#f59000,#fd6e1d);
+    background: -ms-linear-gradient(top,#f59000,#fd6e1d);
+    background: -o-linear-gradient(top,#f59000,#fd6e1d);
+}
+
+.traGop, .traQuaThe {
+    display: block;
+    overflow: hidden;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    background: #288ad6;
+    height: 20px;
+    line-height: 20px;
+}
+
+.ads {
+    margin-left: 20px;
+}
+
+
