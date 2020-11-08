@@ -1,0 +1,31 @@
+.sectionFilter {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    margin: 10px auto 0;
+}
+.filterByBrand {
+    margin-bottom: 20px;
+}
+
+.filterByBrand a {
+    height: 40px;
+    padding: 10px;
+    float: left;
+    width: 12.41%;
+    border: 1px solid #eee;
+    margin: 0 0 -1px -1px;
+}
+
+.filterByBrand a img {
+    max-height: 70%;
+}
+
+.filterByPrice {
+    display: flex;
+    font-size: 14px;
+}
+
+.filterByPrice * {
+    padding-right: 10px;
+}

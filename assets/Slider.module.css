@@ -1,0 +1,18 @@
+.slider {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.main {
+    width: 800px;
+    line-height: 0;
+}
+
+.ads {
+    width: 390px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
