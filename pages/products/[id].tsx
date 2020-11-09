@@ -8,12 +8,12 @@ import Breadcrumb from '../../components/Breadcrumb'
 import DescriptionProduct from '../../components/products/DescriptionProduct'
 
 type Props = {
-  item?: Product
+  product?: Product
   errors?: string
   sidebarItems: Product[]
 }
 
-const StaticPropsDetail = ({ item, errors, sidebarItems }: Props) => {
+const StaticPropsDetail = ({ product, errors, sidebarItems }: Props) => {
   if (errors) {
     return (
       <Layout title="Error | Next.js + TypeScript Example">
@@ -27,12 +27,12 @@ const StaticPropsDetail = ({ item, errors, sidebarItems }: Props) => {
   return (
     <Layout
       title={`${
-        item ? item.name : 'Product Detail'
+        product ? product.name : 'Product Detail'
       } | Next.js + TypeScript Example`}
     >
       <Breadcrumb />
-      {item && <Detail item={item} />}
-      <DescriptionProduct product={item} sidebarItems={sidebarItems} />
+      {product && <Detail product={product} />}
+      {product && <DescriptionProduct product={product} sidebarItems={sidebarItems} />}
     </Layout>
   )
 }
@@ -58,11 +58,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const id = params?.id
     const data = [...sampleProductData, ...sampleSidebarProductData];
-    const item = data.find((data) => data.id === Number(id))
+    const product = data.find((data) => data.id === Number(id))
     const sidebarItems: Product[] = sampleSidebarProductData;
     // By returning { props: item }, the StaticPropsDetail component
     // will receive `item` as a prop at build time
-    return { props: { item,  sidebarItems} }
+    return { props: { product,  sidebarItems} }
   } catch (err) {
     return { props: { errors: err.message } }
   }

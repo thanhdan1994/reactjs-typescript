@@ -113,3 +113,11 @@
     padding: 5px 0;
     width: auto;
 }
+
+.boxSmallPreview ul {
+    max-height: 435px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+}

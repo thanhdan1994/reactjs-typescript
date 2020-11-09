@@ -37,3 +37,11 @@ ol, ul {
 #sectionDetail li.active {
   border: 1px solid #fd8545;
 }
+
+img.show {
+  display: block;
+}
+
+img.hidden {
+  display: none;
+}
