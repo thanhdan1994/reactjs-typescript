@@ -13,7 +13,7 @@ function Detail({ product } : DetailProps) {
   const [activeKey, setActiveKey] = useState(1);
 
   function handleShowPreviewImage(key: number) {
-    console.log('hehe');
+    console.log('hehe 1');
   }
 
   function handleShowPrevImagePreview() {
