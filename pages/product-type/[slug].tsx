@@ -1,20 +1,20 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 
 import { ProductType, Product } from '../../interfaces'
-import { sampleProductData, sampleSidebarProductData } from '../../utils/sample-data'
+import { sampleSidebarProductData } from '../../utils/sample-data'
+import { sampleProductTypeData } from '../../utils/sample-product-type'
 import Layout from '../../components/Layout'
-import styles from '../assets/IndexPage.module.css'
+import styles from '../../assets/IndexPage.module.css'
 import Item from '../../components/products/Item'
 import ItemHorizontal from '../../components/products/ItemHorizontal'
 
 type Props = {
-  ProductType?: ProductType
+  ProductType: ProductType
   errors?: string
   sidebarItems: Product[]
-  items: Product[]
 }
 
-const StaticPropsDetail = ({ ProductType, errors, sidebarItems, items }: Props) => {
+const StaticPropsDetail = ({ ProductType,  errors,  sidebarItems }: Props) => {
   if (errors) {
     return (
       <Layout title="Error | Next.js + TypeScript Example">
@@ -28,18 +28,18 @@ const StaticPropsDetail = ({ ProductType, errors, sidebarItems, items }: Props) 
   return (
     <Layout
       title={`${
-        ProductType ? ProductType.slug : 'product category'
+        ProductType ? ProductType.name : 'product category'
       } | Next.js + TypeScript Example`}
     >
         <section className={styles.sectionIndexPage}>
             <div className={styles.main}>
                 <ul className={styles.productsList}>
-                {items.map((product) => (
+                {ProductType.productLists?.map((product) => (
                     <Item product={product} key={product.id} />
                 ))}
                 </ul>
                 <button className={styles.buttonLoadmore}>
-                Xem thêm 4 đồng hồ thông minh
+                Xem thêm 4 {ProductType.name}
                 </button>
             </div>
             <div className={styles.ads}>
@@ -59,9 +59,9 @@ export default StaticPropsDetail
 
 export const getStaticPaths: GetStaticPaths = async () => {
   // Get the paths we want to pre-render based on users
-  const data = [...sampleProductData, ...sampleSidebarProductData];
-  const paths = data.map((category) => ({
-    params: { id: category.id.toString() },
+  const data = sampleProductTypeData;
+  const paths = data.map((ProductType) => ({
+    params: { slug: ProductType.slug.toString() },
   }))
 
   // We'll pre-render only these paths at build time.
@@ -74,13 +74,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // direct database queries.
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
-    const id = params?.id
-    const data = [...sampleProductData, ...sampleSidebarProductData];
-    const product = data.find((data) => data.id === Number(id))
+    const slug= params?.slug
+    const data = sampleProductTypeData;
+    const ProductType = data.find((data) => data.slug === slug)
     const sidebarItems: Product[] = sampleSidebarProductData;
     // By returning { props: item }, the StaticPropsDetail component
     // will receive `item` as a prop at build time
-    return { props: { product,  sidebarItems} }
+    return { props: { ProductType,  sidebarItems} }
   } catch (err) {
     return { props: { errors: err.message } }
   }

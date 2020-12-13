@@ -40,4 +40,5 @@ export type ProductType = {
   name: string
   slug: string
   thumbnail?: string
+  productLists?: Product[]
 }

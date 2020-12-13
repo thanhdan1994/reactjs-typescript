@@ -15,7 +15,7 @@ const Header = () => (
                 <nav className={styles.nav1}>
                     <ul className={styles.itemsList}>
                         <li>
-                            <Link href="/dien-thoai">
+                            <Link href="/product-type/dien-thoai">
                                 <a>
                                     <Icon className={styles.icon} color="primary">phone_iphone</Icon>
                                     <span>Điện thoại</span>
