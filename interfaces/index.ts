@@ -9,12 +9,14 @@ export type User = {
   name: string
 }
 
-export type ProductImages = {
+export type ProductImage = {
   small: string
   normal: string
 }
 
-export type Product= {
+export type ProductImages = Array<ProductImage>
+
+export type Product = {
   id: number
   name: string
   thumbnail: string
@@ -28,5 +30,14 @@ export type Product= {
     pin: string
   }
   content?: string
-  images?: Array<ProductImages>
+  images: ProductImages
+}
+
+
+
+export type ProductType = {
+  id: number
+  name: string
+  slug: string
+  thumbnail?: string
 }

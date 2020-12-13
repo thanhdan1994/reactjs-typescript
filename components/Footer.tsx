@@ -1,34 +1,33 @@
 import React from 'react'
 import styles from '../assets/Footer.module.css'
 import Link from 'next/link'
-import Icon from '@material-ui/core/Icon'
 
 const Footer = () => (
     <section className={styles.sectionFooter}>
         <ul className={styles.footerColumn1}>
             <li>
-                <Link href="">
+                <Link href="/">
                     <a>
                         Lịch sử mua hàng
                     </a>
                 </Link>
             </li>
             <li>
-                <Link href="">
+                <Link href="/">
                     <a>
                         Tìm hiểu về mua trả góp
                     </a>
                 </Link>
             </li>
             <li>
-                <Link href="">
+                <Link href="/">
                     <a>
                         Chính sách bảo hành
                     </a>
                 </Link>
             </li>
             <li>
-                <Link href="">
+                <Link href="/">
                     <a>
                         Chính sách đổi trả
                     </a>
@@ -37,21 +36,21 @@ const Footer = () => (
         </ul>
         <ul  className={styles.footerColumn2}>
         <li>
-                <Link href="">
+                <Link href="/">
                     <a>
                         Giới thiệu công ty (mwg.vn)
                     </a>
                 </Link>
             </li>
             <li>
-                <Link href="">
+                <Link href="/">
                     <a>
                         Gửi góp ý, khiếu nại
                     </a>
                 </Link>
             </li>
             <li>
-                <Link href="">
+                <Link href="/">
                     <a>
                         Tìm siêu thị (3.000 shop)
                     </a>
@@ -66,21 +65,21 @@ const Footer = () => (
         </ul>
         <ul  className={styles.footerColumn4}>
             <li>
-                <Link href="">
+                <Link href="/">
                     <a>
                         Tìm hiểu về mua trả góp
                     </a>
                 </Link>
             </li>
             <li>
-                <Link href="">
+                <Link href="/">
                     <a>
                         Chính sách bảo hành
                     </a>
                 </Link>
             </li>
             <li>
-                <Link href="">
+                <Link href="/">
                     <a>
                         Chính sách đổi trả
                     </a>

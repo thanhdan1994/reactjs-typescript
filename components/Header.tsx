@@ -15,8 +15,8 @@ const Header = () => (
                 <nav className={styles.nav1}>
                     <ul className={styles.itemsList}>
                         <li>
-                            <Link href="/">
-                                <a className={styles.myCart}>
+                            <Link href="/dien-thoai">
+                                <a>
                                     <Icon className={styles.icon} color="primary">phone_iphone</Icon>
                                     <span>Điện thoại</span>
                                 </a>
@@ -24,7 +24,7 @@ const Header = () => (
                         </li>
                         <li>
                             <Link href="/">
-                                <a className={styles.myCart}>
+                                <a>
                                     <Icon className={styles.icon} color="primary">laptop</Icon>
                                     <span>Laptop</span>
                                 </a>
@@ -32,7 +32,7 @@ const Header = () => (
                         </li>
                         <li>
                             <Link href="/">
-                                <a className={styles.myCart}>
+                                <a>
                                     <Icon className={styles.icon} color="primary">watch</Icon>
                                     <span>Đồng hồ</span>
                                 </a>
@@ -40,7 +40,7 @@ const Header = () => (
                         </li>
                         <li>
                             <Link href="/">
-                                <a className={styles.myCart}>
+                                <a>
                                     <Icon className={styles.icon} color="primary">linked_camera</Icon>
                                     <span>Máy ảnh</span>
                                 </a>
@@ -48,7 +48,7 @@ const Header = () => (
                         </li>
                         <li>
                             <Link href="/">
-                                <a className={styles.myCart}>
+                                <a>
                                     <Icon className={styles.icon} color="primary">local_printshop</Icon>
                                     <span>Máy in</span>
                                 </a>
@@ -56,7 +56,7 @@ const Header = () => (
                         </li>
                         <li>
                             <Link href="/">
-                                <a className={styles.myCart}>
+                                <a>
                                     <Icon className={styles.icon} color="primary">sim_card</Icon>
                                     <span>Thẻ nhớ, sim</span>
                                 </a>
@@ -68,21 +68,21 @@ const Header = () => (
                     <ul className={styles.itemsList}>
                         <li>
                             <Link href="/">
-                                <a className={styles.myCart}>
+                                <a>
                                     <span className={styles.nav2Text}>Tin tức công nghệ</span>
                                 </a>
                             </Link>
                         </li>
                         <li>
                             <Link href="/">
-                                <a className={styles.myCart}>
+                                <a>
                                     <span className={styles.nav2Text}>Giới thiệu về chúng tôi</span>
                                 </a>
                             </Link>
                         </li>
                         <li>
                             <Link href="/">
-                                <a className={styles.myCart}>
+                                <a>
                                     <span className={styles.nav2Text}>Liên hệ</span>
                                 </a>
                             </Link>

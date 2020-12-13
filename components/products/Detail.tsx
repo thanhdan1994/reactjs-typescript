@@ -3,38 +3,54 @@ import React, { useState } from 'react'
 import styles from '../../assets/products/Detail.module.css'
 import { Product } from '../../interfaces'
 import SmallImagePreview from './SmallImagePreview'
+import SlideshowModal from './SlideshowModal'
 
 type DetailProps = {
   product: Product
 }
 
 function Detail({ product } : DetailProps) {
-  const [images, setImages] = useState(product.images);
-  const [activeKey, setActiveKey] = useState(1);
-
-  function handleShowPreviewImage(key: number) {
-    console.log('hehe');
-  }
+  var [images, setImages] = useState(product.images);
+  var [showSlideshow, setShowSlideshow] = useState(false);
 
   function handleShowPrevImagePreview() {
-    console.log('hihi');
+    let newImages: Array<Object> = new Array();
+    newImages.push(images[(images.length - 1)]);
+    for (let i = 0; i < (images.length - 1); i++) {
+      newImages.push(images[i]);
+    }
+    setImages(newImages);
   }
 
   function handleShowNextImagePreview() {
-    console.log('hihi');
+    let newImages: Array<Object> = new Array();
+    for (let i = 1; i < images.length; i++) {
+      newImages.push(images[i]);
+    }
+    newImages.push(images[0]);
+    setImages(newImages);
+  }
+
+  function handleShowSlideshow() {
+      setShowSlideshow(true);
+  }
+
+  function handleCloseSlideshow() {
+    setShowSlideshow(false);
   }
 
   return (
-    <section className={styles.sectionDetail} id="sectionDetail">
+    <>
+      <section className={styles.sectionDetail} id="sectionDetail">
           <div className={styles.boxSmallPreview}>
             <Icon fontSize="large" className={styles.iconArrow} onClick={handleShowPrevImagePreview}>keyboard_arrow_up</Icon>
             <ul>
-              {images && images.map((image, key) => <SmallImagePreview key={key} className={key === 1 ? 'active' : ''} image={image.small} handleShowPreviewImage={() => handleShowPreviewImage(key)}/>)}
+              {images.map((image, key) => <SmallImagePreview key={key} className={key === 1 ? 'active' : ''} image={image.small}/>)}
             </ul>
             <Icon fontSize="large" className={styles.iconArrow} onClick={handleShowNextImagePreview}>keyboard_arrow_down</Icon>
           </div>
           <div className={styles.boxPreview} id="boxPreview">
-            {images && images.map((image, key) => <img key={key} src={image.normal} className={key === 1 ? 'show' : 'hidden'} />)}
+            {images.map((image, key) => <img key={key} src={image.normal} className={key === 1 ? 'show' : 'hidden'} alt="Mô tả ảnh" onClick={handleShowSlideshow} />)}
             <div>
               <Icon fontSize="large">zoom_in</Icon>
               <span>Phóng to hình sản phẩm</span>
@@ -89,6 +105,8 @@ function Detail({ product } : DetailProps) {
             </div>
           </div>
       </section>
+      {showSlideshow && <SlideshowModal handleCloseSlideshow={handleCloseSlideshow} productImages={images} />}
+    </>
   )
 }
 
