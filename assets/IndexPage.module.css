@@ -35,6 +35,11 @@
     flex-wrap: wrap;
 }
 
+.postsList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .ads {
     width: 30%;
     margin-left: 20px;

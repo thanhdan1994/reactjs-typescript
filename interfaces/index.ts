@@ -42,3 +42,13 @@ export type ProductType = {
   thumbnail?: string
   productLists?: Product[]
 }
+
+
+export type Article = {
+  id: number
+  title: string
+  slug: string
+  description: string
+  content: string
+  thumbnail: string
+}

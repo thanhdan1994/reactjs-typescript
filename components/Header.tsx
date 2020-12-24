@@ -67,7 +67,7 @@ const Header = () => (
                 <nav className={styles.nav2}>
                     <ul className={styles.itemsList}>
                         <li>
-                            <Link href="/">
+                            <Link href="/articles">
                                 <a>
                                     <span className={styles.nav2Text}>Tin tức công nghệ</span>
                                 </a>
